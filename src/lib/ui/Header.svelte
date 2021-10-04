@@ -1,4 +1,4 @@
-<header class="mx-auto max-w-5xl flex items-center py-4 shadow-md">
+<header class="mx-auto max-w-5xl flex  items-center py-4 shadow-md">
   <a class="flex space-x-1 font-bold text-3xl items-center" href="/">
     <svg
       xmlns="http://www.w3.org/2000/svg"

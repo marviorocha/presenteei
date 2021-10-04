@@ -1,12 +1,20 @@
 <script>
-  import Header from "$lib/ui/Header.svelte";
   import Users from "$lib/components/Users.svelte";
   import Warp from "$lib/ui/Warp.svelte";
+  import Step from "$lib/components/Steps.svelte";
 </script>
 
-<div class="mx-auto bg-gray-700 h-30 text-white">
-  <Header />
-</div>
+<svelte:head>
+  <title>Index Presentei</title>
+</svelte:head>
+
 <Warp>
+  <Step>
+    <li class="step step-primary ">Categoria</li>
+    <li class="step">Dicas</li>
+
+    <li data-content="?" class="step">Presente</li>
+    <li data-content="🎁" class="step">Finalizar</li>
+  </Step>
   <Users />
 </Warp>
