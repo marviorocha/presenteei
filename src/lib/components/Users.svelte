@@ -4,7 +4,7 @@
 </script>
 
 <div class="grid-cols-4 grid text-white gap-2">
-  {#each $categories as categories}
+  {#each $categories as categories (categories.id)}
     <div class="flex flex-col items-center justify-center">
       <a class="avatar" title={categories.name} href="presents/{categories.id}">
         <div

@@ -12,7 +12,6 @@
   <Step>
     <li class="step step-primary ">Categoria</li>
     <li class="step">Dicas</li>
-
     <li data-content="?" class="step">Presente</li>
     <li data-content="🎁" class="step">Finalizar</li>
   </Step>

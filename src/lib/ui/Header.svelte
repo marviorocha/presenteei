@@ -17,6 +17,6 @@
     <span class="text-yellow-500"> PresenteEI </span>
   </a>
   <div class="flex space-x-2 mx-6">
-    <a href="">Ideias Para Presente</a>
+    <a href="/">Ideias Para Presente</a>
   </div>
 </header>
