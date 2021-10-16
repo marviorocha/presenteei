@@ -6,8 +6,16 @@
   import { page } from "$app/stores";
   import Loading from "$lib/ui/Loading.svelte";
   import Products from "$lib/components/Products.svelte";
+
+  let product = [];
+  const pagi = $page.params.id;
+
+  const getPag = (pagi) => {
+    if ([pagi].includes(undefined)) {
+      return $search["pagination"];
+    }
+  };
   let pag = 1;
-  const urlParams = $page.params.id;
 
   const updatePage = (params) => {
     if (params === "prev") {
@@ -15,14 +23,20 @@
     } else {
       pag -= 1;
     }
-    updateProducts(urlParams, pag);
+
+    window.scrollTo({
+      top: 50,
+      left: 0,
+      behavior: "smooth",
+    });
+
+    updateProducts($page.params.id, pag);
   };
 </script>
 
 <svelte:head>
   <title>Welcome</title>
 </svelte:head>
-
 <Warp>
   <Step>
     <li class="step step-primary ">Categoria</li>
@@ -31,12 +45,16 @@
     <li data-content="🎁" class="step">Finalizar</li>
   </Step>
 
-  <div class="grid grid-cols-3 gap-4">
-    {#each $search as products (products.id)}
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {#each $search.offers || product as products (products.id)}
       <Products {products} />
     {:else}
       <Loading />
     {/each}
   </div>
-  <Pagination {pag} handlerPage={updatePage} />
+  <Pagination
+    {pag}
+    getPagination={$search.pagination || []}
+    handlerPage={updatePage}
+  />
 </Warp>

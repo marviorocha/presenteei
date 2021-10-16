@@ -1,24 +1,30 @@
-import { writable, derived } from "svelte/store";
+import { writable, derived, get } from "svelte/store";
 import lomadee from "./Lomadee"
-
-// const urlParams = new URLSearchParams(window.location.search);
 
 const store = writable([], () => {
     setProduct();
 
-    return () => { }
-
+    return () => console.log('no more subscribers');
 });
 
 
-export const setProduct = async (urlParams) => {
-    const products = await lomadee("tecnologia", 1);
-    store.set(products.offers)
+export const setProduct = async () => {
+    const urlParams = window.location.pathname.split('/');
+    const products = await lomadee(urlParams[2], 1).catch(error => console.log(error));
+    if (products) {
+        store.set(products)
+    }
+
 }
 
+
 export const updateProducts = async (key, pagination) => {
-    const products = await lomadee(key, pagination)
-    store.update(storeValue => products.offers)
+    const products = await lomadee(key, pagination).catch(error => console.log(error));
+
+    if (products) {
+        store.update(storeValue => products)
+    }
+
 
 }
 
