@@ -6,17 +6,12 @@
   import { page } from "$app/stores";
   import Loading from "$lib/ui/Loading.svelte";
   import Products from "$lib/components/Products.svelte";
-
+  import category, { setCategories } from "../../stores/Category";
   let product = [];
-  const pagi = $page.params.id;
-
-  const getPag = (pagi) => {
-    if ([pagi].includes(undefined)) {
-      return $search["pagination"];
-    }
-  };
   let pag = 1;
-
+  let id = $page.params.id;
+  const categories = $category.find((item) => item.id === parseInt(id));
+  console.log(categories);
   const updatePage = (params) => {
     if (params === "prev") {
       pag += 1;
@@ -30,7 +25,7 @@
       behavior: "smooth",
     });
 
-    updateProducts($page.params.id, pag);
+    updateProducts(categories.id, pag, id);
   };
 </script>
 
@@ -41,8 +36,8 @@
   <Step>
     <li class="step step-primary ">Categoria</li>
     <li class="step step-primary">Dicas</li>
-    <li data-content="?" class="step">Presente</li>
-    <li data-content="🎁" class="step">Finalizar</li>
+    <li data-content="🎁" class="step step-primary">Presente</li>
+    <li data-content="?" class="step">Finalizar</li>
   </Step>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">

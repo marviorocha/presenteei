@@ -1,10 +1,9 @@
 <script>
-
   export let products;
   const { id, name, price, thumbnail, link, store } = products;
 </script>
 
-<div class="card text-center shadow-2xl">
+<div class="card bg-gray-100 text-center shadow-2xl">
   <figure class="px-10 pt-10">
     <img alt={name} src={thumbnail} class="rounded-xl" />
   </figure>
@@ -22,4 +21,3 @@
     </div>
   </div>
 </div>
-

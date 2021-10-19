@@ -6,7 +6,7 @@
 <div class="grid-cols-4 grid text-white gap-2">
   {#each $categories as categories (categories.id)}
     <div class="flex flex-col items-center justify-center">
-      <a class="avatar" title={categories.name} href="presents/{categories.id}">
+      <a class="avatar" title={categories.name} href="dicas/{categories.id}">
         <div
           class="mb-2 rounded-box w-24 h-24 ring ring-primary ring-offset-base-100 ring-offset-2"
         >

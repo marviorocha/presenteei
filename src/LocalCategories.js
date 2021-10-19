@@ -2,7 +2,13 @@ export default [
     {
         id: 1,
         name: "Masculino",
-        image: "./src/assets/images/man.jpg"
+        image: "./src/assets/images/man.jpg",
+        keywords: [
+            "Fone",
+            "Eletrônicos",
+            "Roupas",
+            "Camisa de Time de Futebol"
+        ]
     },
     {
         id: 2,

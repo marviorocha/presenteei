@@ -1,10 +1,9 @@
 <script>
   import Warp from "$lib/ui/Warp.svelte";
- 
 </script>
 
 <svelte:head>
-  <title>Index Presentei</title>
+  <title>Sobre o projeto PresenteEI!</title>
 </svelte:head>
 
 <Warp>
