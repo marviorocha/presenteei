@@ -8,6 +8,7 @@
 		"lint": "eslint --ignore-path .gitignore ."
 	},
 	"devDependencies": {
+		"@sveltejs/adapter-netlify": "^1.0.0-next.33",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.3.6",
 		"cssnano": "^5.0.8",
@@ -21,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"daisyui": "^1.14.2"
+		"daisyui": "^1.14.2",
+		"svelte-paginate": "^0.0.1"
 	}
 }
