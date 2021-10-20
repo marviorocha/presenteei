@@ -7,7 +7,7 @@
 {#if getPagination.length === 0}
   <div />
 {:else}
-  <div class="flex justify-center items-center">
+  <div class="flex  mt-10 justify-center items-center">
     <div class="btn-group">
       <button
         class="btn btn-wide {pag <= 1 && 'disabled'}"
