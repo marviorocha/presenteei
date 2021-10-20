@@ -2,7 +2,7 @@
   import Pagination from "$lib/components/Pagination.svelte";
   import Warp from "$lib/ui/Warp.svelte";
   import Step from "$lib/components/Steps.svelte";
-  import search, { updateProducts } from "../../stores/Search";
+  import search, { updateProducts, setProduct } from "../../stores/Search";
   import { page } from "$app/stores";
   import Loading from "$lib/ui/Loading.svelte";
   import Products from "$lib/components/Products.svelte";
@@ -10,8 +10,9 @@
   let product = [];
   let pag = 1;
   let id = $page.params.id;
-  const categories = $category.find((item) => item.id === parseInt(id));
-  console.log(categories);
+  let getCategory = $category[0].keywords;
+  const categories = getCategory.find((item) => item.id === id);
+
   const updatePage = (params) => {
     if (params === "prev") {
       pag += 1;
@@ -25,13 +26,15 @@
       behavior: "smooth",
     });
 
-    updateProducts(categories.id, pag, id);
+    updateProducts(categories.filterkey, pag, id);
   };
+  setProduct(categories.filterkey);
 </script>
 
 <svelte:head>
   <title>Welcome</title>
 </svelte:head>
+
 <Warp>
   <Step>
     <li class="step step-primary ">Categoria</li>

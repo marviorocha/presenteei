@@ -41,8 +41,8 @@
                     <div class="bg-gray-100 p-6 rounded-lg">
                         <a
                             target="_parent"
-                            title="Dicas de presente {key}"
-                            href="/presents/{key}"
+                            title="Dicas de presente {key.name}"
+                            href="/presents/{key.id}"
                         >
                             <svg
                                 class="w-full h-full"
@@ -61,7 +61,7 @@
                             <h2
                                 class="text-xl text-gray-900 text-center font-medium title-font mb-4"
                             >
-                                {key}
+                                {key.name}
                             </h2>
                         </a>
                     </div>
