@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>Index Presentei</title>
+  <title>Guia de Presentes - Presenteei</title>
 </svelte:head>
 
 <Warp>

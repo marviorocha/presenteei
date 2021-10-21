@@ -3,7 +3,7 @@
   import categories from "../../stores/Category";
 </script>
 
-<div class="grid-cols-4 grid text-white gap-2">
+<div class="grid-cols-2 md:grid-cols-4 grid text-white gap-3">
   {#each $categories as categories (categories.id)}
     <div class="flex flex-col items-center justify-center">
       <a class="avatar" title={categories.name} href="dicas/{categories.id}">

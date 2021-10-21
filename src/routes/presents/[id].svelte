@@ -43,7 +43,7 @@
     <li data-content="?" class="step">Finalizar</li>
   </Step>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
     {#each $search.offers || product as products (products.id)}
       <Products {products} />
     {:else}
