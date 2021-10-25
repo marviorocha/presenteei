@@ -3,7 +3,7 @@ const source_id = "35763726"
 
 export default async (keyword, page, categoryID) => {
 
-    let Lomadee = await fetch(`${URL_TOKEN}/offer/_search?sourceId=${source_id}&keyword=${keyword}&categoryId=${categoryID}&page=${page}`)
+    let Lomadee = await fetch(`${URL_TOKEN}/offer/_search?sourceId=${source_id}&keyword=${keyword}&page=${page}&categoryId=${categoryID}`)
         .catch(error => console.error(error));
 
     const products = await Lomadee.json();

@@ -5,15 +5,15 @@ export default [
         image: "./src/assets/images/man.jpg",
         keywords: [{
 
-            id: "2",
-            name: "Notebook",
+            id: "6424",
+            name: "Tecnologia",
             filterkey: "notebook"
 
         },
         {
-            id: "2792",
-            name: "Instrumentos Musicais",
-            filterkey: ""
+            id: "6634",
+            name: "Sandálias",
+            filterkey: "sandalia"
         },
         {
             id: "2701",

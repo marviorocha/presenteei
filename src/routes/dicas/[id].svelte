@@ -1,13 +1,25 @@
 <script>
+    import { onMount } from "svelte";
     import { page } from "$app/stores";
     import { base, assets } from "$app/paths";
     import Warp from "$lib/ui/Warp.svelte";
     import Loading from "$lib/ui/Loading.svelte";
     import category, { setCategories } from "../../stores/Category";
     import Step from "$lib/components/Steps.svelte";
-    import About from "../about.svelte";
 
-    // import categorias, { setCategorias } from "../../stores/Dicas";
+    import { fade, draw, fly } from "svelte/transition";
+    import { flip } from "svelte/animate";
+    let duration = 4000;
+    let delay = 200;
+    onMount(() => {
+        setTimeout(() => {
+            document.querySelectorAll("path").forEach(() => {
+                path.style.fill = "orange";
+            });
+        }, duration + delay);
+    });
+    import { get } from "svelte/store";
+    // import categorias, { setCat/egorias } from "../../stores/Dicas";
     let id = $page.params.id;
     $: categories = $category.find((item) => item.id === parseInt(id));
     console.log(base);
@@ -56,7 +68,9 @@
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg"
-                                ><path
+                            >
+                                <path
+                                    in:draw={{ duration, delay }}
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                     stroke-width="2"
@@ -76,3 +90,11 @@
         </div>
     {/if}
 </Warp>
+
+<style>
+    path {
+        stroke: orange;
+        fill: white;
+        transition: 2s;
+    }
+</style>

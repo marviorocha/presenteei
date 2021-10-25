@@ -10,7 +10,9 @@ const store = writable([], () => {
 export const setProduct = async (id) => {
     const urlParams = window.location.pathname.split('/');
     const idProduct = await id;
+    console.log(id)
     const products = await lomadee(idProduct, 1, urlParams[2]).catch(error => console.log(error));
+
     if (products) {
         store.set(products)
     }

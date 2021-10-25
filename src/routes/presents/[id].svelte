@@ -28,13 +28,13 @@
 
     updateProducts(categories.filterkey, pag, id);
   };
-  setProduct(categories.filterkey);
 </script>
 
 <svelte:head>
   <title>Welcome</title>
 </svelte:head>
 
+{console.log(categories.filterkey)};
 <Warp>
   <Step>
     <li class="step step-primary ">Categoria</li>
