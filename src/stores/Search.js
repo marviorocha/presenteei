@@ -7,11 +7,13 @@ const store = writable([], () => {
 });
 
 
-export const setProduct = async (id) => {
+
+
+
+export const setProduct = async (idProduct) => {
     const urlParams = window.location.pathname.split('/');
-    const idProduct = await id;
-    console.log(id)
-    const products = await lomadee(idProduct, 1, urlParams[2]).catch(error => console.log(error));
+    const product = await idProduct
+    const products = await lomadee(product, 1, urlParams[2]).catch(error => console.log(error));
 
     if (products) {
         store.set(products)
