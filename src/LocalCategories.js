@@ -6,19 +6,19 @@ export default [
         keywords: [{
 
             id: "6424",
-            name: "Tecnologia",
+            name: "Notebook",
             filterkey: "notebook"
 
         },
         {
             id: "6634",
-            name: "Sandálias",
-            filterkey: "sandalia"
+            name: "Sandália",
+            filterkey: "sandálias"
         },
         {
-            id: "2701",
-            name: "Casa e Decoração",
-            filterkey: "casa"
+            id: "3482",
+            name: "Livros",
+            filterkey: "livros"
         }],
 
 
