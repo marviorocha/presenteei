@@ -28,17 +28,16 @@
 
     updateProducts(categories.filterkey, pag, id);
   };
-  setProduct(categories.filterkey);
 </script>
 
 <svelte:head>
-  <title>Welcome</title>
+  <title>{categories.name} | Melhores presentes</title>
 </svelte:head>
 
 <Warp>
   <Step>
     <li class="step step-primary ">Categoria</li>
-    <li class="step step-primary">Dicas</li>
+    <li class="step step-primary"><a href="/dicas/1"> Dicas </a></li>
     <li data-content="🎁" class="step step-primary">Presente</li>
     <li data-content="?" class="step">Finalizar</li>
   </Step>

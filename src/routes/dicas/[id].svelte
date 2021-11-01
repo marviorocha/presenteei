@@ -1,7 +1,6 @@
 <script>
     import { onMount } from "svelte";
     import { page } from "$app/stores";
-    import { base, assets } from "$app/paths";
     import Warp from "$lib/ui/Warp.svelte";
     import Loading from "$lib/ui/Loading.svelte";
     import category, { setCategories } from "../../stores/Category";
@@ -18,11 +17,10 @@
             });
         }, duration + delay);
     });
-    import { get } from "svelte/store";
+
     // import categorias, { setCat/egorias } from "../../stores/Dicas";
     let id = $page.params.id;
     $: categories = $category.find((item) => item.id === parseInt(id));
-    console.log(base);
 </script>
 
 <svelte:head>
@@ -52,18 +50,17 @@
             <div class="text-2xl">Presentes {categories.name}</div>
         </div>
 
-        <div class="flex flex-wrap m-4 ">
+        <div class="flex flex-wrap m-4 content-center ">
             {#each categories.keywords as key}
                 <div class="xl:w-1/4 md:w-1/2 p-4">
-                    <div class="bg-gray-100  p-6 rounded-lg">
+                    <div class="bg-gray-100  p-3  rounded-lg">
                         <a
-                            class="text-center"
                             target="_parent"
                             title="Dicas de presente {key.name}"
-                            href="/presents/{key.id}"
+                            href="/presents/{key.id}?keyword={key.filterkey}&categories={key.categories}"
                         >
                             <svg
-                                class="w-32 text-center h-32"
+                                class="w-32 mx-auto h-32"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
