@@ -3,14 +3,13 @@
     import Warp from "$lib/ui/Warp.svelte";
     import Step from "$lib/components/Steps.svelte";
     import product from "../../stores/Product";
-    import { page } from "$app/stores";
+
     import Loading from "$lib/ui/Loading.svelte";
     import { price } from "$lib/helper/Price";
-    import category, { setCategories } from "../../stores/Category";
 </script>
 
 <svelte:head>
-    <title>| Presenteei</title>
+    <title>{$product.length === 0 ? "" : $product[0].name} | Presenteei</title>
 </svelte:head>
 
 <Warp>
