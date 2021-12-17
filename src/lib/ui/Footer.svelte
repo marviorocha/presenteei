@@ -41,7 +41,7 @@
             <span
                 class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
             >
-                <a class="text-gray-500 hover:text-gray-300">
+                <!-- <a href="" class="text-gray-500 hover:text-gray-300">
                     <svg
                         fill="currentColor"
                         stroke-linecap="round"
@@ -108,7 +108,7 @@
                         />
                         <circle cx="4" cy="4" r="2" stroke="none" />
                     </svg>
-                </a>
+                </a> -->
             </span>
         </div>
     </Warp>
